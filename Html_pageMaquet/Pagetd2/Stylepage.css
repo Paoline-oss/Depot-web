@@ -1,0 +1,189 @@
+@font-face {
+    font-family: 'day_romanregular';
+    src: url('dayrom-webfont.woff2') format('woff2'),
+    url('dayrom-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'ballparkweiner';
+    src: url('ballpark-webfont.woff2') format('woff2'),
+    url('ballpark-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+header a{
+    text-decoration: none;
+    color: black;
+    font-family: 'day_romanregular', serif
+}
+html{
+    height:500px;
+}
+#logo{
+    display: flex;
+    justify-items: stretch;
+    justify-content: start;
+    width: 80%;
+}
+#logo img{
+    width: 50px;
+    height: auto;
+    justify-items: right;
+
+}
+header #logo #textesousphoto{
+    position:absolute;
+    width:100%;
+    font-family: 'day_romanregular', serif;
+    font-weight: normal;
+}
+
+#logo #texte_photo{
+    font-family: 'ballparkweiner', serif;
+    font-size: 25px;
+}
+#menu{
+    text-align: right;
+    width: 100%;
+}
+#menu a{
+    padding: 15px;
+    font-family:'day_roman,serif', serif;
+    text-transform: uppercase;
+}
+body{
+    background-image:url("images/fond_jaune.png");
+}
+#texte{
+    font-family: 'day_romanregular', serif;
+    width: 60%;
+    float: left;
+    border: 25px;
+
+}
+aside{
+    display: flex;
+    align-items: center;
+}
+aside #bloc_gris{
+    background-color: gray;
+    width: 150px;
+    float: left;
+    border: 5px solid gray;
+    border-radius: 10px;
+    padding: 20px;
+    color: white;
+    font-family: 'day_romanregular', serif;
+}
+
+aside h2{
+    font-weight: normal;
+}
+aside img{
+    border-radius: 10px;
+    float: left;
+}
+#texte_aside aside{
+    color: white;
+}
+.separateur img{
+    width: 1500px;
+    height: 2px;
+}
+#image-entete img{
+    border-radius: 15px;
+    padding: 10px;
+    height:auto;
+    width:1500px;
+    display: block;
+}
+h1{
+    font-family: 'day_roman,serif', serif;
+
+}
+section img{
+    float: left;
+}
+footer img{
+    display: block;
+    margin: 0 auto;
+}
+aside table tr th img{
+    width: 25px;
+    height: auto;
+
+}
+.ensemble{
+
+
+}
+.button_image button {
+
+}
+
+
+footer table {
+
+    font-family: 'day_roman,serif', serif;
+    font-weight: normal;
+}
+footer table tr th{
+    font-weight: normal;
+    font-family: 'day_roman,serif', serif;
+}
+footer table tr th ul li{
+    color: saddlebrown;
+}
+footer table tr th h3{
+    font-weight: normal;
+    font-family: 'day_roman,serif', serif;
+}
+footer .container{
+    display: flex;
+}
+footer .image-container{
+    border: 1px solid black;
+    margin: 5px;
+}
+footer{
+    font-family:'day_romanregular', serif;
+}
+#main{
+    
+    font-family: 'trebuchet ms', Arial, sans-serif;
+    font-weight: normal;
+
+}
+figure{
+    position : relative;
+    display:flex;
+    width: 400px;
+    margin: auto;
+    text-align: center;
+    justify-content: center;
+
+}
+figure img{
+    display: block;
+    border-radius: 15px;
+    padding: 10px;
+    height:auto;
+    width:1200px;
+    justify-content: center;
+
+}
+figcaption{
+    position: absolute;
+    bottom: 10px;
+    justify-content:left;
+    display:block;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 8px;
+    border-radius: 15px;
+    color : white;
+}
+#fleche{
+    vertical-align: middle;
+}
