@@ -1,0 +1,36 @@
+table{
+    border: 1px solid black;
+}
+#ex1{
+    float: left;
+    margin-right: 5px;
+}
+table tr{
+    border: 1px solid black;
+}
+table tr th{
+    border: 1px solid black;
+    font-weight: normal;
+}
+table thead tr  th{
+    background-color: slategray;
+    color: white;
+    text-align: center;
+}
+footer{
+    position: fixed;
+    bottom: 0;
+    width: 98%;
+    background-color: slategray;
+    padding: 10px;
+    border-radius: 5px;
+
+    color: white;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto
+}
+#table2{
+
+}

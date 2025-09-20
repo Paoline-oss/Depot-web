@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>convertisseurJS </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="ex1">
+    <table id="table1">
+        <thead><tr><th colspan="3">Convertisseur</th></tr></thead>
+        <tr>
+            <th>
+                <img src="public/image/euro.png" alt="image euro">
+            </th>
+
+            <th>
+                Euro
+            </th>
+            <th>
+                <label for="euro" id="label_euro">Entrer la valeur en euro</label>
+                <input type="text" id="euro" value="0">
+            </th>
+        </tr>
+        <tr>
+            <th>
+                <img src="public/image/dollar.png" alt="image dollar">
+            </th>
+
+            <th>
+                Dollar américain
+            </th>
+
+            <th>
+                <label for="euro" id="label_dollar_am">Entrer la valeur en euro</label>
+                <input type="text" id="dollar_am" value="0">
+            </th>
+        </tr>
+        <tr>
+            <th>
+                <img src="public/image/kangourou.png" alt="image kangourou">
+            </th>
+
+            <th>
+                Dollar australien
+            </th>
+
+            <th>
+                <label for="euro" id="label_dollar_aus">Entrer la valeur en euro</label>
+                <input type="text" id="dollar_aus" value="0">
+            </th>
+        </tr>
+    </table>
+    <button onclick="Convertisseur()" id="but_conver">Convertir</button>
+</div>
+    <!---------------------------------------------------------------------------------------------------------------------------------------->
+    <table id="table2">
+        <thead><tr><th colspan="3">Convertisseur</th></tr></thead>
+        <tr>
+            <th>
+                <img src="public/image/euro.png" alt="image euro">
+            </th>
+
+            <th>
+                Euro
+            </th>
+            <th>
+                <label for="euro" id="label_euro2">Entrer la valeur en euro</label>
+                <input type="text" id="euro2" value="0" onkeyup="Convertisseur2()">
+            </th>
+        </tr>
+        <tr>
+            <th>
+                <img src="public/image/dollar.png" alt="image dollar">
+            </th>
+
+            <th>
+                Dollar américain
+            </th>
+
+            <th>
+                <label for="euro" id="label_dollar_am2">Entrer la valeur en euro</label>
+                <input type="text" id="dollar_am2" value="0">
+            </th>
+        </tr>
+        <tr>
+            <th>
+                <img src="public/image/kangourou.png" alt="image kangourou">
+            </th>
+
+            <th>
+                Dollar australien
+            </th>
+
+            <th>
+                <label for="euro" id="label_dollar_aus2">Entrer la valeur en euro</label>
+                <input type="text" id="dollar_aus2" value="0">
+            </th>
+        </tr>
+    </table>
+
+</body>
+<footer>
+    D'aprés la bourse du samedi 20 septembre
+</footer>
+<script src="index.js"></script>
+</html>

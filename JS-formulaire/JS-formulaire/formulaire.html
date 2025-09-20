@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulaire</title>
+    <link rel="stylesheet" href="formulaire.css">
+</head>
+
+<body>
+<div class="container">
+    <h1>Menu</h1>
+    <div id="menu">
+        <div id="section1">Lien et Image</div>
+        <div id="section2">Des éléments</div>
+        <div id="section3">Barre de progression</div>
+    </div>
+</div>
+
+<div id="LienetImage">
+    <h1>lien et images </h1>
+    <a id ="lien_wiki" href="https://fr.wikipedia.org/wiki/Wikip%C3%A9dia:Accueil_principal">La page principal Wikipédia</a><br>
+    <img src="img.png" alt="image de google">
+
+</div>
+
+    <div id="centre">
+    <h1>Des éléments</h1>
+    <input id="text-1" type="text" value="Premier pas avec Javascript"></input>
+
+<table>
+    <tr>
+        <th><input type="radio" id="label1" value="choix1"name="choix"><label for="label1" id="texte1">Choix 1</label></th>
+        <th><input type="radio"id="label2" value="choix2"name="choix"><label for="label2" id="texte2">Choix 2</label></th>
+        <th><input type="radio"id="label3" value="choix3" name="choix"><label for="label3" id="texte3">Choix 3</label></th>
+    </tr>
+</table>
+<input type="password"></input><br>
+        <div class="volume-container">
+            <input type="range" id="volumeSlider" min="0" max="100" value="0" oninput="updateVolume(this.value)">
+            <label for="volumeSlider" id="volumeLabel">Volume</label>
+            <span id="volumeValue">0</span>
+        </div>
+        <label id="muteLabel" for="buttonMute" >Une case a cocher</label>
+        <input type="checkbox" id="buttonMute"  oninput="updateTexte()"><br>
+Date <input type="date"></input><br>
+    <button type="button">ok</button>
+</div>
+
+    <div id="fin">
+        <h1>Barres de progression</h1>
+        <label for="barre1">File progress:</label>
+        <progress  max="100" value ="1" id="barre1"></progress><br>
+        <label for="barre2">Espace disponible</label>
+        <progress  max="100" value ="1" id="barre2"></progress><br>
+        <label for="date" id="textedate">
+            La date est
+            <input type="date" id="date">
+        </label>
+
+    </div>
+
+    <script>
+        const lienWiki = document.querySelector('a[href*="wikipedia.org"]');
+        lienWiki.href = "https://fr.wikipedia.org/wiki/L%C3%A9onard_de_Vinci";
+
+            const label1 = document.getElementById('label1');
+            //console.log(label1);
+            const texte1 = label1.nextElementSibling;
+            //console.log(texte1);
+            texte1.textContent = "HP";
+
+            const label2 = document.getElementById('label2');
+            const texte2 = label2.nextElementSibling;
+            texte2.textContent = "Casque";
+
+            const label3 = document.getElementById('label3');
+            const texte3 = label3.nextElementSibling;
+            texte3.textContent = "Bluetooth";
+
+            const radio1 = document.querySelectorAll('input[name="choix"]');
+            const volumeLabel = document.getElementById('volumeLabel');
+            const volumeSlider = document.getElementById('volumeSlider');
+
+            radio1.forEach(radio => {
+                radio.addEventListener('change', function(){
+                    if(this.value === "choix1") {
+                        volumeLabel.textContent ="Volume HP";
+                    }else if(this.value === "choix2") {
+                        volumeLabel.textContent ="Volume Casque";
+                    }else if(this.value === "choix3") {
+                        volumeLabel.textContent ="Volume Bluetooth";
+                    }
+                })
+            })
+        function updateVolume(volume) {
+                document.getElementById('volumeValue').textContent=volume;
+        }
+        const MuteTexte = document.getElementById('muteLabel');
+        MuteTexte.textContent ="Muté"
+        function updateTexte() {
+                //const MuteTexte = document.getElementById('muteLabel');
+                const ButtonMute = document.getElementById('buttonMute');
+                //MuteTexte.textContent ="Muté"
+                if(ButtonMute.checked){
+                    MuteTexte.textContent ="Ouvrir le micro";
+                    volumeSlider.disabled=true;
+                }else{
+                    MuteTexte.textContent ="Muté";
+                    volumeSlider.disabled=false;
+                }
+
+        }
+        const section = document.getElementById('LienetImage');
+        const image = document.createElement('img');
+        image.src="https://upload.wikimedia.org/wikipedia/commons/b/bd/UPHF_logo.svg";
+        image.width = 200;
+        section.appendChild(image);
+
+        document.getElementById("LienetImage").style.display = "none";
+        document.getElementById("centre").style.display = "none";
+        document.getElementById("fin").style.display = "none";
+
+        document.getElementById("section1").addEventListener("click",function(){
+            document.getElementById("LienetImage").style.display = "block";
+            document.getElementById("centre").style.display = "none";
+            document.getElementById("fin").style.display = "none";
+        })
+        document.getElementById("section2").addEventListener("click",function(){
+            document.getElementById("LienetImage").style.display = "none";
+            document.getElementById("centre").style.display = "block";
+            document.getElementById("fin").style.display = "none";
+        })
+        document.getElementById("section3").addEventListener("click",function(){
+            document.getElementById("LienetImage").style.display = "none";
+            document.getElementById("centre").style.display = "none";
+            document.getElementById("fin").style.display = "block";
+        })
+        /*window.addEventListener("DOMContentLoaded", function(){
+            const savedRadio = localStorage.getItem('selectedRadio');
+            if(savedRadio){
+                document.getElementById(savedRadio).checked = true;
+            }
+        })*/
+        const date=document.getElementById('date');
+        date.addEventListener('change', function(){
+            const newdate=date.value;
+            console.log(newdate);
+        })
+        let progression = 0;
+        const barre1 = document.getElementById('barre1');
+        const barre2 = document.getElementById('barre2');
+
+        const interval = setInterval(()=>{
+            if(progression>= 100){
+                clearInterval(interval);
+            }else {
+                progression += 5;
+                barre1.value = progression;
+                barre2.value = progression;
+            }
+        }, 2000)
+
+
+
+    </script>
+
+
+</body>
+</html>

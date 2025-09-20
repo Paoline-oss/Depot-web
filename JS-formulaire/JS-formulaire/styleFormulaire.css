@@ -1,0 +1,9 @@
+.volume-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+}
+#barre1 #barre2 {
+    width: 1000px;
+}
