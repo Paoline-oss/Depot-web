@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="app">
+        <button id="button" v-on:click="Nbclique">Cliquez-moi</button>
+        <p>
+            Vous avez cliqué {{ nbclique }}
+        </p>
+        <input type="text" id="zone_texte" v-model="texte"></input>
+        <p>
+            Votre texte {{texte}}
+        </p>
+        <input type="number" id="zone_ttc" v-model="montant_ttc">
+        <p>
+            Montant TTC : {{Calul_montant_ttc}} -
+        </p>
+        <input type="text" id="compteur_mot" v-model="mots">
+        <p>
+            Nombre de mots {{nb_mot}}
+        </p>
+        <p v-if="isTrue">
+            La condition est true
+        </p>
+        <p v-else>
+            La condition est false
+        </p>
+        <input type="text" id="zone_prenom" v-model="prenom">
+        <button v-on:click="Message_bienvenue">Afficher le message de bienvenue</button>
+        <p>
+            {{message_bienvenue}}
+        </p>
+        <ol>
+            <li v-for="x in fruits" >{{x}} <!--x n'a pas besoin d'être déclaré dans data on cherche x dans le tableau fruits-->
+                le {{x}} a une longueur de {{x.length}} caracteres
+            </li>
+
+        </ol>
+
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        const app = Vue.createApp({
+            data(){
+                return {
+                    nbclique: 0,
+                    texte:" ",
+                    montant_ttc: 0,
+                    mots: "",
+                    nb_mot: 0,
+                    isTrue: true,
+                    prenom: " ",
+                    message_bienvenue:"",
+                    fruits: ["pomme","bannane","orange"]
+                };
+            },
+            methods:{ // methodes c'est pour des chose qui change
+                Nbclique(){
+                    this.nbclique++
+                },
+                Message_bienvenue(){
+                    this.message_bienvenue = "Bienvenue" + this.prenom
+
+                }
+            },
+            computed : { //computed c'est pour des choses a calculé
+                Calul_montant_ttc(){
+                    return  this.montant_ttc * 1.20
+                }
+            },
+            watch:{ //on regarde si mots change
+                mots(NewText){
+                    this.nb_mot = NewText.split(' ').filter(n => n !== '').length //Cette ligne donne le nombre de mots non vides dans newText, en supposant que les mots sont séparés par des espaces simples.
+
+                }
+            }
+        })
+        app.mount('#app');
+        window.app = app; //dans la console on fait app.variable que l'on veut changer
+    </script>
+</body>
+</html>
